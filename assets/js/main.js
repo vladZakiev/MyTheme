@@ -1,3 +1,4 @@
+console.log('hello')
 $(document).ready(function() {
 	
 	$(window).scroll(function() {
