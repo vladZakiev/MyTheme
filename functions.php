@@ -2,9 +2,21 @@
 //dinamic title tag 
 function my_theme_support(){
     add_theme_support('title-tag');
+    add_theme_support('custom-logo');
+    add_theme_support('post-thumbnails');
 }
 add_action('after_setup_theme' , 'my_theme_support');
 
+
+function theme_menu(){
+    $locations = array(
+        'primary' => "Desctop Primary Menu",
+        'footer' => "Footer menu"
+    );
+
+    register_nav_menus($locations);
+}
+add_action('init', 'theme_menu');
 
 function theme_register_styles() { 
     $version = wp_get_theme () -> get('Version');
